@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Angels Podcast — About</title>
+
+  <!-- PWA / iOS-safe viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Basic meta -->
+  <meta name="description" content="Farah — Nurse, listener, connector. Conversations on marriage, family, relationships and everyday health.">
+
+  <!-- Styles (self-contained for easy drop-in) -->
+  <style>
+    /* ===== Reset & base ===== */
+    :root{
+      --bg: #FAFBFC;
+      --card: #FFFFFF;
+      --muted: #6B7280;
+      --accent: #6C9E8B; /* calming teal/green */
+      --accent-2: #F6C1C1; /* warm peach for personality */
+      --ink: #0F172A;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+      --max-width: 980px;
+      --shadow: 0 8px 24px rgba(20,30,40,0.06);
+      --easing: cubic-bezier(.2,.9,.35,1);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,var(--bg),#F7FBF8 60%);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding: env(safe-area-inset-top) 12px env(safe-area-inset-bottom);
+      display:flex;
+      justify-content:center;
+    }
+
+    /* ===== Container ===== */
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      margin:28px 12px;
+    }
+
+    /* ===== Header / Nav ===== */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#548E9D);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:20px;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+    .brand h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:0.2px;
+    }
+    .brand p{
+      margin:0;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* Desktop nav */
+    nav.topnav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      font-size:14px;
+    }
+    nav.topnav a{
+      color:var(--muted);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      transition:all .2s var(--easing);
+    }
+    nav.topnav a:hover{ background:rgba(0,0,0,0.04); color:var(--ink) }
+
+    /* Mobile hamburger */
+    .hamburger{
+      display:none;
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:var(--card);
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .hamburger button{
+      border:0;
+      background:transparent;
+      padding:10px;
+      cursor:pointer;
+    }
+
+    /* ===== Hero card ===== */
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.85));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+
+    .avatar{
+      width:110px;
+      min-width:110px;
+      height:110px;
+      border-radius:18px;
+      background:linear-gradient(135deg,var(--accent-2),#FFD9D9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:40px;
+      color:#7A2F2F;
+      box-shadow: 0 6px 18px rgba(120,80,80,0.06);
+      flex-shrink:0;
+      position:relative;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block }
+
+    .hero-content{
+      min-width:0;
+    }
+    .title{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .title h1{
+      font-size:20px;
+      margin:0;
+    }
+    .title .tag{
+      background:linear-gradient(90deg,#FFF0F2, #FEECE9);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      color:#7A2F2F;
+      box-shadow:0 2px 8px rgba(122,47,47,0.06);
+    }
+    .role{ color:var(--muted); font-size:13px; margin-bottom:10px }
+
+    .badges{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      background:rgba(108,158,139,0.12);
+      color:var(--accent);
+      font-weight:600;
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    /* CTA group */
+    .cta{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      transition:transform .12s var(--easing), box-shadow .12s var(--easing);
+      box-shadow:none;
+      text-decoration:none;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#3B8977);
+      color:white;
+      box-shadow:0 8px 18px rgba(59,137,119,0.12);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--ink);
+      border:1px solid rgba(15,23,42,0.06);
+    }
+    .btn:active{ transform:translateY(1px) }
+
+    /* ===== About card ===== */
+    .about-card{
+      margin-top:18px;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .about-card h3{
+      margin:0 0 8px 0;
+      font-size:16px;
+      letter-spacing:0.1px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:12px;
+    }
+    .about-text{
+      margin:0;
+      color:#172033;
+      font-size:15px;
+      white-space:pre-wrap;
+    }
+    .resources{
+      display:flex;
+      gap:10px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .chip{
+      background:#F4F8F6;
+      border-radius:12px;
+      padding:8px 10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Footer small */
+    .footer{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+    }
+
+    /* ===== Responsive rules ===== */
+    @media (max-width:640px){
+      .hero{ flex-direction:row; padding:14px }
+      .avatar{ width:92px; height:92px; border-radius:14px; font-size:34px }
+      .title h1{ font-size:18px }
+      nav.topnav{ display:none }
+      .hamburger{ display:flex }
+    }
+
+    @media (max-width:380px){
+      .wrap{ margin:18px 8px }
+      .avatar{ width:76px; height:76px; font-size:28px }
+      .title h1{ font-size:16px }
+      .hero{ gap:12px; padding:12px }
+      .lead, .about-text{ font-size:14px }
+    }
+
+    /* Mobile slide menu */
+    .mobile-menu{
+      position:fixed;
+      right:12px;
+      left:12px;
+      bottom:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+      border-radius:14px;
+      padding:12px;
+      box-shadow:0 18px 40px rgba(20,30,40,0.12);
+      display:none;
+      gap:10px;
+      z-index:60;
+    }
+    .mobile-menu.show{ display:flex; flex-direction:column }
+
+    .mobile-menu a{
+      padding:12px;
+      border-radius:10px;
+      text-decoration:none;
+      color:var(--ink);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:600;
+      border:1px solid rgba(15,23,42,0.03);
+      background:transparent;
+    }
+
+    /* subtle entrance animation */
+    .hero, .about-card{ transform:translateY(6px); opacity:0; animation:enter .6s var(--easing) forwards; }
+    @keyframes enter { to { transform:none; opacity:1 } }
+
+  </style>
+</head>
+<body id="body">
+
+  <div class="wrap" role="main">
+
+    <!-- Header -->
+    <header>
+      <a class="brand" href="index.html" aria-label="Home — Angels Podcast">
+        <div class="logo" aria-hidden="true">AP</div>
+        <div>
+          <h2>Angels Podcast</h2>
+          <p>Conversations about family, love & everyday health</p>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="aboutus.html" aria-current="page">About</a>
+        <a href="subscribe.html">Subscribe</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <div class="hamburger" aria-hidden="false">
+        <button id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" title="Open menu">
+          <!-- simple hamburger icon -->
+          <svg width="22" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="1" width="24" height="2" rx="1" fill="#0F172A"/>
+            <rect x="0" y="7" width="24" height="2" rx="1" fill="#0F172A"/>
+            <rect x="0" y="13" width="16" height="2" rx="1" fill="#0F172A"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="false" aria-hidden="true">
+      <a href="index.html">Home <span aria-hidden="true">🏠</span></a>
+      <a href="episodes.html">Episodes <span aria-hidden="true">🎧</span></a>
+      <a href="aboutus.html">About <span aria-hidden="true">🧑‍⚕️</span></a>
+      <a href="subscribe.html">Subscribe <span aria-hidden="true">🔔</span></a>
+      <a href="contact.html">Contact <span aria-hidden="true">✉️</span></a>
+    </div>
+
+    <!-- Hero / Profile -->
+    <section class="hero" aria-labelledby="hostName">
+      <div class="avatar" aria-hidden="true">
+        <!-- Placeholder initials; replace with <img src="..." alt="Farah"> if you have a photo -->
+        <span>F</span>
+      </div>
+
+      <div class="hero-content">
+        <div class="title">
+          <h1 id="hostName">Farah — Host & Listener</h1>
+          <div class="tag" aria-hidden="true">Nurse • Listener • Connector</div>
+        </div>
+
+        <div class="role">Warm, practical conversations about marriage, family, relationships & everyday health</div>
+
+        <div class="badges" aria-hidden="true">
+          <div class="badge">Nursing Background</div>
+          <div class="badge">Foundation in Psychology</div>
+          <div class="badge">Practical Health & Wellness</div>
+        </div>
+
+        <div class="cta" role="group" aria-label="Quick actions">
+          <a class="btn btn-primary" href="episodes.html">Listen to Latest</a>
+          <a class="btn btn-ghost" href="subscribe.html">Subscribe & Follow</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About card -->
+    <article class="about-card" aria-labelledby="aboutTitle">
+      <h3 id="aboutTitle">✨ About Farah & Angels Podcast</h3>
+      <p class="lead">A compassionate voice where practical health meets heartfelt advice — led by a nurse who listens first.</p>
+
+      <p class="about-text">
+Hi — I’m Farah. I trained as a nurse and spent years supporting people through big life moments: births, illnesses, family crises, and quiet recoveries. Along the way I also studied psychology to better understand how people relate, heal, and connect.
+
+Angels Podcast grew from those bedside conversations. I believe the best guidance blends real-life compassion with simple, reliable health awareness. I don’t aim to replace your doctor — I bring humane, practical perspectives on relationships, family life, personal growth, and everyday wellness.
+
+I’m a listener by nature. My strength is helping people feel heard, connecting the dots between feelings and practical next steps, and making health and relationship advice approachable and relatable. Expect honest conversations, tools you can use, and gentle evidence-based insight delivered with warmth.
+
+Whether you’re navigating marriage decisions, parenting challenges, caring for a loved one, or simply wanting a healthier, kinder life — this podcast is for you. Thank you for joining me on the journey.
+      </p>
+
+      <div class="resources" aria-hidden="true">
+        <div class="chip">Topics: Marriage • Parenting • Mental Health • Practical Wellness</div>
+        <div class="chip">Format: Interviews • Listener Questions • Short health explainers</div>
+      </div>
+
+      <div class="footer">
+        <div>Want Farah on your show or to book a conversation? <a href="contact.html">Get in touch</a></div>
+        <div>© <strong>Angels Podcast</strong></div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Minimal JS for mobile menu toggling -->
+  <script>
+    (function(){
+      const toggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('mobileMenu');
+      let open = false;
+
+      function setState(state){
+        open = state;
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+        if(open){ menu.classList.add('show'); document.body.style.overflow = 'hidden'; }
+        else { menu.classList.remove('show'); document.body.style.overflow = ''; }
+      }
+
+      toggle.addEventListener('click', function(){
+        setState(!open);
+      });
+
+      // close on outside click or escape
+      document.addEventListener('click', function(e){
+        if(!open) return;
+        if(!menu.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){
+          setState(false);
+        }
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setState(false);
+      });
+
+    })();
+  </script>
+</body>
+</html>

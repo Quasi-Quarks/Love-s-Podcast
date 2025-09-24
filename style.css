@@ -159,3 +159,50 @@ h1 {}
     text-decoration: underline;
     text-underline-offset: 14px;
 }
+
+.profilepic {
+ background-image: url(Background/farah2.png);
+ height: 60px;
+ width: 60px;
+ border-radius: 100%;
+ background-size: 100% 100%;
+}
+
+
+
+.sections {
+    height: 100vh;
+    width: 100%;
+    background-size: 100% 100%;
+    background: linear-gradient(rgb(255 0 0 / 59%), rgb(255 0 0 / 50%)), url(Background/bacground6.jpg);
+    background-size: initial;
+    overflow: hidden;
+}
+
+.sectionrow {
+    height: 50%;
+    width: 107%;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.sectionelement {
+    width: 50%;
+    height: 100%;
+    flex-direction: row;
+    transform: skew(2deg, 11deg);
+    background-color: #0000ff78;
+    background-image: linear-gradient(45deg, #1138b147, #1138b147);
+    overflow: hidden;
+}
+
+.sectionelement h1 {
+    color: white;
+    font-size: 3.4rem;
+    font-weight: 700;
+    transform: skew(
+0deg, 0deg);
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 14px;
+}

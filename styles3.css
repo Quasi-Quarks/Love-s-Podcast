@@ -1,0 +1,108 @@
+/* Reset */
+    * {margin: 0;padding: 0;box-sizing: border-box;}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('background/Aboutusbackground.PNG') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    /* Navbar */
+    .menu_container {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      padding: 0.8rem 1rem;
+      z-index: 10;
+    }
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .menu p {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .menu p:hover {
+      color: #ff6ec7; /* neon pink */
+    }
+
+    /* Profile Section */
+    .profile {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .profilepic {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: url('background/farah2.png') center/cover no-repeat;
+      border: 4px solid #ff6ec7;
+      box-shadow: 0 0 15px rgba(255, 110, 199, 0.7);
+      /* box-sizing: unset; */
+      padding: 9px;
+      box-shadow: 0 0 15px rgba(255, 110, 199, 0.7);
+      /* padding: 39px; */
+      /* background-size: 100% 100%; */
+    }
+    .profilename h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ff6ec7;
+    }
+
+    /* About Section */
+    .aboutus_container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .aboutus_header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #ffcc70; /* golden accent */
+    }
+    .aboutus_section p {
+      font-size: 1.05rem;
+      color: #f0f0f0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .menu { gap: 1rem; font-size: 0.85rem; }
+      .profilename h1 { font-size: 1.5rem; }
+      .aboutus_header h1 { font-size: 1.6rem; }
+      .aboutus_section p { font-size: 0.95rem; }
+    }
+
+
+
+a {
+    color: white;
+}

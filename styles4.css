@@ -1,0 +1,125 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: #000;
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+/* Navbar */
+.menu_container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  z-index: 10;
+}
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.menu p {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.menu p:hover, .menu p.active {
+  color: #ff6ec7; /* neon pink */
+}
+
+/* Hero Section */
+.topcontainer {
+  background: url(background/backgrounda4.webp) no-repeat center center fixed;
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo_container {
+  text-align: center;
+  z-index: 1;
+}
+
+#logo {
+  height: 167px;
+  width: 200px;
+  background-image: url(background/logo.png);
+  background-size: cover;
+  margin: 0 auto 1rem;
+}
+
+.logotxt h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+.logotxt .highlight {
+  color: #ff6ec7;
+}
+
+/* Listen Button */
+#listennow {
+  background: linear-gradient(90deg, #ff6ec7, #ffcc70);
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 30px;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+#listennow:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Episodes Section */
+.herosection2videos {
+  background-color: #111;
+  padding: 2rem 0;
+  overflow-x: auto;
+}
+.video_list {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+.video_element video {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 110, 199, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu { gap: 1rem; font-size: 0.85rem; }
+  .logotxt h1 { font-size: 2rem; }
+  #listennow { font-size: 1rem; padding: 10px 25px; }
+  .video_element video { width: 260px; }
+}
