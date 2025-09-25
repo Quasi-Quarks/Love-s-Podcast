@@ -1,108 +1,233 @@
-/* Reset */
-    * {margin: 0;padding: 0;box-sizing: border-box;}
+/* =====================
+   RESET & VARIABLES
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('Background/Aboutusbackground.PNG') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+:root {
+  --bg: #0b0b12;
+  --card: #0f1720;
+  --accent: #ff6ec7;
+  --muted: rgba(255, 255, 255, 0.15);
+  --gradient-dark: linear-gradient(180deg, #08080a, #111216);
+}
 
-    /* Overlay for readability */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.65);
-      z-index: 0;
-    }
+/* =====================
+   BODY
+===================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('Background/Aboutusbackground.PNG') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
 
-    /* Navbar */
-    .menu_container {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: rgba(20, 20, 20, 0.85);
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      padding: 0.8rem 1rem;
-      z-index: 10;
-    }
-    .menu {
-      display: flex;
-      gap: 1.5rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .menu p {
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .menu p:hover {
-      color: #ff6ec7; /* neon pink */
-    }
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
 
-    /* Profile Section */
-    .profile {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    .profilepic {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1rem;
-      border-radius: 50%;
-      background: url('Background/farah2.png') center/cover no-repeat;
-      border: 4px solid #ff6ec7;
-      box-shadow: 0 0 15px rgba(255, 110, 199, 0.7);
-      /* box-sizing: unset; */
-      padding: 9px;
-      box-shadow: 0 0 15px rgba(255, 110, 199, 0.7);
-      /* padding: 39px; */
-      /* background-size: 100% 100%; */
-    }
-    .profilename h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #ff6ec7;
-    }
+/* =====================
+   NAVBAR
+===================== */
+.menu_container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  z-index: 10;
+}
 
-    /* About Section */
-    .aboutus_container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-    .aboutus_header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #ffcc70; /* golden accent */
-    }
-    .aboutus_section p {
-      font-size: 1.05rem;
-      color: #f0f0f0;
-      margin-bottom: 1.5rem;
-    }
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .menu { gap: 1rem; font-size: 0.85rem; }
-      .profilename h1 { font-size: 1.5rem; }
-      .aboutus_header h1 { font-size: 1.6rem; }
-      .aboutus_section p { font-size: 0.95rem; }
-    }
+.menu p {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-
+.menu p:hover {
+  color: var(--accent);
+}
 
 a {
-    color: white;
+  color: white;
+  text-decoration: none;
 }
+
+/* =====================
+   PROFILE SECTION
+===================== */
+.profile {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.profilepic {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: url('Background/farah2.png') center/cover no-repeat;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 15px rgba(255, 110, 199, 0.7);
+}
+
+.profilename h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+/* =====================
+   ABOUT SECTION
+===================== */
+.aboutus_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.aboutus_header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #ffcc70;
+}
+
+.aboutus_section p {
+  font-size: 1.05rem;
+  color: #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  padding: 3rem 2rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.1), rgba(255, 138, 0, 0.1));
+  z-index: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff8a00;
+}
+
+.footer-logo {
+  width: 140px;
+  height: 100px;
+  background: url('Background/logo.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Social icons */
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.socials a {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  color: #aaa;
+  position: relative;
+  z-index: 1;
+}
+

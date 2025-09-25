@@ -1,0 +1,50 @@
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .menu {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+  .profilename h1 {
+    font-size: 1.5rem;
+  }
+  .aboutus_header h1 {
+    font-size: 1.6rem;
+  }
+  .aboutus_section p {
+    font-size: 0.95rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .socials {
+    justify-content: center;
+  }
+  .footer-logo {
+    width: 170px;
+    height: 160px;
+    margin-bottom: 0.5rem;
+  }
+  .footer-section p,
+  .footer-section li,
+  .footer-section a {
+    font-size: 1.05rem;
+  }
+  .footer-bottom {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+.footer-section.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
