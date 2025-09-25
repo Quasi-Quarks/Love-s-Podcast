@@ -46,5 +46,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+}
+
+section.profile {
+    padding-top: 62px;
 }
 }
+
